@@ -1,26 +1,29 @@
-from fastapi import FastAPI, status
-from routers import users
-app = FastAPI(
-    title='Users Microservice',
-    description='This microservice manage the users and their activity',
-    version='1.0'
-)
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 
-origins = ["*"]
+app = FastAPI()
 
+# Create an instance of Jinja2Templates and point it to the templates directory
+templates = Jinja2Templates(directory="templates")
 
-app.get('/users/', status_code= status.HTTP_200_OK)
-def register_user():
-    return {'message': 'User information'}
+@app.get("/", response_class=HTMLResponse)
+async def read_root(request: Request):
+    # Render the index.html template and pass data to it
+    return templates.TemplateResponse("home/index.html", {"request": request, "title": "AAF", "message": "Welcome to VideoProducer"})
 
+@app.get("/about", response_class=HTMLResponse)
+async def about(request: Request):
+    return templates.TemplateResponse("info/about.html", {
+        "request": request,
+        "title": "About Us",
+        "message": "This is the about page of our FastAPI app."
+    })
 
-
-origins = ["*"]
-
-# ROUTERS
-app.include_router(users.router)
-# app.include_router(duplicated.router)
-    
-@app.get("/", status_code=status.HTTP_200_OK) 
-async def get_user(): 
-    return {"message": "Welcome to Users-Marvel-Store"}
+@app.get("/contract", response_class=HTMLResponse)
+async def about(request: Request):
+    return templates.TemplateResponse("users/contract.html", {
+        "request": request,
+        "title": "Contract",
+        "message": "This is the contract to rent"
+    })
