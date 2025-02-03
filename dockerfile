@@ -1,4 +1,4 @@
-FROM python:3.13-slim-buster
+FROM python:3.13.1-bookworm⁠
 
 ENV PYTHONUNBUFFERED 1
 ENV APP_HOME /app
