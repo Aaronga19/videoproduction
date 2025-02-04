@@ -10,13 +10,14 @@ from database.database import db_dependency
 from jose import  JWTError
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.orm import Session
+from database import models
+from database.storage import load_archive_storage
 
 router = APIRouter(
     prefix="/transactions",
     tags=['Transactions']
 )
-from sqlalchemy.orm import Session
-from database import models
 
 @router.post("/create", status_code=status.HTTP_201_CREATED)
 def create_transaction(
@@ -57,6 +58,10 @@ def create_transaction(
             db.add(db_transaction_product)
 
         db.commit()
+        date = transaction.rental_start_date.date()
+        file = "C:/Users/ARCAN/OneDrive/Escritorio/Documentos/Software/VideoProductora/src/curriculum.pdf"
+        path_destiny=f"users/contracts/{current_user.id}/{date}/{db_transaction.id}-contract.pdf"
+        load_archive_storage(file, path_destiny)
         return transaction
 
     except HTTPException as e:
