@@ -69,6 +69,7 @@ class Transaction(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     customer_id = Column(Integer, ForeignKey('customers.id'), nullable=False)
+    folio = Column(String, nullable=False)
     rental_start_date = Column(TIMESTAMP, nullable=False)
     rental_end_date = Column(TIMESTAMP, nullable=False)
     total_price = Column(DECIMAL(10, 2), nullable=False)

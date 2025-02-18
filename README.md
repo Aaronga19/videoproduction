@@ -20,3 +20,9 @@ cd videoproductora
 ## In gitbash
 
 bash init.bash
+
+
+
+## Funel Transaction.
+
+- Pending - Signed - Paid - Sent - Completed

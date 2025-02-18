@@ -105,7 +105,7 @@ class TransactionProductResponse(TransactionProductBase):
 
 # Transaction schema
 class TransactionBase(BaseModel):
-    # customer_id: int
+    # id: int
     rental_start_date: datetime
     rental_end_date: datetime
     total_price: float
