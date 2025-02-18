@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrato de Arrendamiento de Equipo Audiovisual</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contract">
+        <header>
+            <h1>CONTRATO DE ARRENDAMIENTO DE EQUIPO AUDIOVISUAL</h1>
+        </header>
+        <div class="folio" style="position: sticky; top: 0; right: 200;">Folio: {{folio}}</div>  
+            
+            <div class="content">
+                <div class="date">
+                    <span>Fecha de celebración:</span>
+                    <span class="bold">{{initial_date}}</span>
+                </div>
+
+                <section>
+                    <h2><span class="icon">📜</span> PARTES CONTRATANTES</h2>
+                    <div class="parties">
+                        <p><strong>ARRENDADOR:</strong> [Nombre de la Empresa Arrendadora], con domicilio en [Dirección del Arrendador]</p>
+                        <p><strong>ARRENDATARIO:</strong> {{client_name}}, con domicilio en {{client_address}}</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>CLÁUSULAS</h2>
+
+                    <div class="clause">
+                        <h3>PRIMERA: OBJETO DEL CONTRATO</h3>
+                        <p>El Arrendador da en arrendamiento al Arrendatario el siguiente equipo audiovisual:</p>
+                        <ul>
+                            <li><strong>Cámaras:</strong> [Modelos y características específicas]</li>
+                            <li><strong>Luces:</strong> [Modelos y características específicas]</li>
+                            <li><strong>Ópticos:</strong> [Modelos y características específicas]</li>
+                        </ul>
+                        <p class="italic">El equipo se entrega en perfecto estado de funcionamiento y conservación, situación que el Arrendatario declara conocer y aceptar.</p>
+                    </div>
+
+                    <div class="clause">
+                        <h3><span class="icon">📅</span> SEGUNDA: DURACIÓN DEL CONTRATO</h3>
+                        <p>El presente contrato tendrá una vigencia desde el día <span class="bold">{{initial_date}}</span> hasta el día <span class="bold">{{end_date}}</span>.</p>
+                        <p class="italic">El Arrendatario se obliga a devolver el equipo en la fecha de finalización, salvo acuerdo expreso entre las partes para una prórroga.</p>
+                    </div>
+
+                    <div class="clause">
+                        <h3><span class="icon">💰</span> TERCERA: PRECIO Y FORMA DE PAGO</h3>
+                        <p>El Arrendatario se compromete a pagar al Arrendador:</p>
+                        <ul>
+                            <li>Precio total del arrendamiento: <span class="bold">{{total_amount}}</span></li>
+                            <li>Depósito en garantía: <span class="bold">{{garantee_amount}}</span></li>
+                        </ul>
+                        <p class="italic">Ambos montos deberán ser abonados en su totalidad antes de la entrega del equipo.</p>
+                    </div>
+
+                    <div class="clause">
+                        <h3><span class="icon">🛡️</span> CUARTA: DEPÓSITO EN GARANTÍA</h3>
+                        <p>El depósito en garantía será devuelto al Arrendatario una vez verificado que el equipo ha sido devuelto en las mismas condiciones en que fue entregado.</p>
+                    </div>
+
+                    <div class="clause">
+                        <h3>QUINTA: OBLIGACIONES DEL ARRENDATARIO</h3>
+                        <ul>
+                            <li>Utilizar el equipo de forma adecuada y conforme a las instrucciones proporcionadas por el Arrendador.</li>
+                            <li>No realizar modificaciones, reparaciones o alteraciones al equipo sin la autorización previa y por escrito del Arrendador.</li>
+                            <li>Devolver el equipo en las mismas condiciones en que fue recibido.</li>
+                            <li>Asumir la responsabilidad total por la pérdida o daño del equipo durante el período de arrendamiento.</li>
+                        </ul>
+                    </div>
+
+                    <div class="clause">
+                        <h3>SEXTA: RESPONSABILIDAD Y SEGURO</h3>
+                        <p>El Arrendatario será responsable de cualquier daño, pérdida o robo del equipo durante el período de arrendamiento. Se recomienda que el Arrendatario contrate un seguro que cubra estos riesgos.</p>
+                    </div>
+
+                    <div class="clause">
+                        <h3>SÉPTIMA: INDEMNIZACIÓN</h3>
+                        <p>El Arrendatario se compromete a indemnizar y mantener indemne al Arrendador frente a cualquier reclamación.</p>
+                    </div>
+
+                    <div class="clause">
+                        <h3>OCTAVA: TERMINACIÓN ANTICIPADA</h3>
+                        <p>El Arrendador podrá rescindir el presente contrato de forma inmediata en caso de incumplimiento de cualquiera de las obligaciones asumidas por el Arrendatario.</p>
+                    </div>
+
+                    <div class="clause">
+                        <h3><span class="icon">⚖️</span> NOVENA: JURISDICCIÓN Y LEY APLICABLE</h3>
+                        <p>El presente contrato se regirá por las leyes de <span class="bold">[Jurisdicción Correspondiente]</span>.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>FIRMA DE LAS PARTES</h2>
+                    <p class="italic">En prueba de conformidad, las partes firman el presente contrato en dos ejemplares de un mismo tenor y a un solo efecto, en el lugar y fecha indicados.</p>
+
+                    <div class="signatures">
+                        <div class="signature-box">
+                            <p><strong>EL ARRENDADOR:</strong> [Nombre del Representante Legal]</p>
+                            <p>Firma: __________</p>
+                            <p>Fecha: __________</p>
+                        </div>
+
+                        <div class="signature-box">
+                            <p><strong>EL ARRENDATARIO:</strong> {{client_name}}</p>
+                            <p>Firma: __________</p>
+                            <p>Fecha: __________</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

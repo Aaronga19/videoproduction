@@ -108,7 +108,7 @@ def create_item(db: Session, item: schemas.ItemCreate):
 
 # Transactions
 def create_transaction(db: Session, transaction: schemas.TransactionBase):
-    db_transaction = models.transaction(
+    db_transaction = models.Transaction(
         customer_id = transaction.customer_id,
         comentaries = transaction.comentaries,
         owner = transaction.owner,
@@ -119,4 +119,3 @@ def create_transaction(db: Session, transaction: schemas.TransactionBase):
     db.commit()
     db.refresh(db_transaction)
     return db_transaction
-

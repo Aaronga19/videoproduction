@@ -10,7 +10,9 @@ class Settings(BaseSettings):
     secret_key: str  
     algorithm: str
     access_token_expires_minutes: int
-
+    # creds_path = str
+    GOOGLE_APPLICATION_CREDENTIALS: str
+    bucket_name: str
     class Config:
         env_file = "connection/.env"
 settings = Settings()
